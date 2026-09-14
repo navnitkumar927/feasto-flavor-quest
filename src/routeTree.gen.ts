@@ -11,11 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AccountRouteImport } from './routes/account'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as OffersRouteImport } from './routes/offers'
+import { Route as OwnerRouteImport } from './routes/owner'
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as OrdersIndexRouteImport } from './routes/orders.index'
 import { Route as OrdersOrderIdRouteImport } from './routes/orders.$orderId'
@@ -30,6 +32,11 @@ const IndexRoute = IndexRouteImport.update({
 const AccountRoute = AccountRouteImport.update({
   id: '/account',
   path: '/account',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CheckoutRoute = CheckoutRouteImport.update({
@@ -55,6 +62,11 @@ const LoginRoute = LoginRouteImport.update({
 const OffersRoute = OffersRouteImport.update({
   id: '/offers',
   path: '/offers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OwnerRoute = OwnerRouteImport.update({
+  id: '/owner',
+  path: '/owner',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RegisterRoute = RegisterRouteImport.update({
@@ -86,11 +98,13 @@ const RestaurantsRestaurantIdRoute = RestaurantsRestaurantIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/account': typeof AccountRoute
+  '/admin': typeof AdminRoute
   '/checkout': typeof CheckoutRoute
   '/explore': typeof ExploreRoute
   '/forgot-password': typeof ForgotPasswordRoute
   '/login': typeof LoginRoute
   '/offers': typeof OffersRoute
+  '/owner': typeof OwnerRoute
   '/register': typeof RegisterRoute
   '/orders/$orderId': typeof OrdersOrderIdRoute
   '/restaurants/$restaurantId': typeof RestaurantsRestaurantIdRoute
@@ -100,11 +114,13 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/account': typeof AccountRoute
+  '/admin': typeof AdminRoute
   '/checkout': typeof CheckoutRoute
   '/explore': typeof ExploreRoute
   '/forgot-password': typeof ForgotPasswordRoute
   '/login': typeof LoginRoute
   '/offers': typeof OffersRoute
+  '/owner': typeof OwnerRoute
   '/register': typeof RegisterRoute
   '/orders/$orderId': typeof OrdersOrderIdRoute
   '/restaurants/$restaurantId': typeof RestaurantsRestaurantIdRoute
@@ -115,11 +131,13 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/account': typeof AccountRoute
+  '/admin': typeof AdminRoute
   '/checkout': typeof CheckoutRoute
   '/explore': typeof ExploreRoute
   '/forgot-password': typeof ForgotPasswordRoute
   '/login': typeof LoginRoute
   '/offers': typeof OffersRoute
+  '/owner': typeof OwnerRoute
   '/register': typeof RegisterRoute
   '/orders/$orderId': typeof OrdersOrderIdRoute
   '/restaurants/$restaurantId': typeof RestaurantsRestaurantIdRoute
@@ -131,11 +149,13 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/account'
+    | '/admin'
     | '/checkout'
     | '/explore'
     | '/forgot-password'
     | '/login'
     | '/offers'
+    | '/owner'
     | '/register'
     | '/orders/$orderId'
     | '/restaurants/$restaurantId'
@@ -145,11 +165,13 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/account'
+    | '/admin'
     | '/checkout'
     | '/explore'
     | '/forgot-password'
     | '/login'
     | '/offers'
+    | '/owner'
     | '/register'
     | '/orders/$orderId'
     | '/restaurants/$restaurantId'
@@ -159,11 +181,13 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/account'
+    | '/admin'
     | '/checkout'
     | '/explore'
     | '/forgot-password'
     | '/login'
     | '/offers'
+    | '/owner'
     | '/register'
     | '/orders/$orderId'
     | '/restaurants/$restaurantId'
@@ -174,11 +198,13 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AccountRoute: typeof AccountRoute
+  AdminRoute: typeof AdminRoute
   CheckoutRoute: typeof CheckoutRoute
   ExploreRoute: typeof ExploreRoute
   ForgotPasswordRoute: typeof ForgotPasswordRoute
   LoginRoute: typeof LoginRoute
   OffersRoute: typeof OffersRoute
+  OwnerRoute: typeof OwnerRoute
   RegisterRoute: typeof RegisterRoute
   OrdersOrderIdRoute: typeof OrdersOrderIdRoute
   RestaurantsRestaurantIdRoute: typeof RestaurantsRestaurantIdRoute
@@ -200,6 +226,13 @@ declare module '@tanstack/react-router' {
       path: '/account'
       fullPath: '/account'
       preLoaderRoute: typeof AccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/checkout': {
@@ -235,6 +268,13 @@ declare module '@tanstack/react-router' {
       path: '/offers'
       fullPath: '/offers'
       preLoaderRoute: typeof OffersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/owner': {
+      id: '/owner'
+      path: '/owner'
+      fullPath: '/owner'
+      preLoaderRoute: typeof OwnerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/register': {
@@ -278,11 +318,13 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AccountRoute: AccountRoute,
+  AdminRoute: AdminRoute,
   CheckoutRoute: CheckoutRoute,
   ExploreRoute: ExploreRoute,
   ForgotPasswordRoute: ForgotPasswordRoute,
   LoginRoute: LoginRoute,
   OffersRoute: OffersRoute,
+  OwnerRoute: OwnerRoute,
   RegisterRoute: RegisterRoute,
   OrdersOrderIdRoute: OrdersOrderIdRoute,
   RestaurantsRestaurantIdRoute: RestaurantsRestaurantIdRoute,
