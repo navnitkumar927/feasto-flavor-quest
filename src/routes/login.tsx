@@ -55,8 +55,8 @@ function LoginPage() {
       }
     >
       <form onSubmit={submit} className="space-y-4" noValidate>
-        <Field label="Email or phone" name="email" type="email" error={errors.email} placeholder="you@example.com" />
-        <Field label="Password" name="password" type="password" error={errors.password} placeholder="••••••••" />
+        <Field label="Email or phone" name="email" type="email" error={errors["email"]} placeholder="you@example.com" />
+        <Field label="Password" name="password" type="password" error={errors["password"]} placeholder="••••••••" />
         <div className="text-right">
           <Link to="/forgot-password" className="text-xs font-semibold text-primary hover:underline">
             Forgot password?
@@ -84,7 +84,7 @@ export function Field({
   label: string;
   name: string;
   type?: string;
-  error?: string;
+  error?: string | undefined;
   placeholder?: string;
 }) {
   return (

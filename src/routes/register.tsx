@@ -56,10 +56,10 @@ function RegisterPage() {
       }
     >
       <form onSubmit={submit} className="space-y-4" noValidate>
-        <Field label="Full name" name="name" error={errors.name} placeholder="Navnit Rathor" />
-        <Field label="Email" name="email" type="email" error={errors.email} placeholder="you@example.com" />
-        <Field label="Phone" name="phone" type="tel" error={errors.phone} placeholder="+91 98765 43210" />
-        <Field label="Password" name="password" type="password" error={errors.password} placeholder="••••••••" />
+        <Field label="Full name" name="name" error={errors["name"]} placeholder="Navnit Rathor" />
+        <Field label="Email" name="email" type="email" error={errors["email"]} placeholder="you@example.com" />
+        <Field label="Phone" name="phone" type="tel" error={errors["phone"]} placeholder="+91 98765 43210" />
+        <Field label="Password" name="password" type="password" error={errors["password"]} placeholder="••••••••" />
         <Button type="submit" size="lg" className="w-full rounded-full">
           Create account
         </Button>

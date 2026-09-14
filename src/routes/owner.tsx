@@ -21,7 +21,7 @@ export const Route = createFileRoute("/owner")({
   component: OwnerPortal,
 });
 
-const restaurant = restaurants[0];
+const restaurant = restaurants[0]!;
 
 function OwnerPortal() {
   const [menu, setMenu] = useState(() => getMenu(restaurant.id));
