@@ -10,33 +10,206 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AccountRouteImport } from './routes/account'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as ExploreRouteImport } from './routes/explore'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as OffersRouteImport } from './routes/offers'
+import { Route as OwnerRouteImport } from './routes/owner'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as OrdersIndexRouteImport } from './routes/orders.index'
+import { Route as OrdersOrderIdRouteImport } from './routes/orders.$orderId'
+import { Route as RestaurantsIndexRouteImport } from './routes/restaurants.index'
+import { Route as RestaurantsRestaurantIdRouteImport } from './routes/restaurants.$restaurantId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccountRoute = AccountRouteImport.update({
+  id: '/account',
+  path: '/account',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExploreRoute = ExploreRouteImport.update({
+  id: '/explore',
+  path: '/explore',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OffersRoute = OffersRouteImport.update({
+  id: '/offers',
+  path: '/offers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OwnerRoute = OwnerRouteImport.update({
+  id: '/owner',
+  path: '/owner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrdersIndexRoute = OrdersIndexRouteImport.update({
+  id: '/orders/',
+  path: '/orders/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrdersOrderIdRoute = OrdersOrderIdRouteImport.update({
+  id: '/orders/$orderId',
+  path: '/orders/$orderId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RestaurantsIndexRoute = RestaurantsIndexRouteImport.update({
+  id: '/restaurants/',
+  path: '/restaurants/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RestaurantsRestaurantIdRoute = RestaurantsRestaurantIdRouteImport.update({
+  id: '/restaurants/$restaurantId',
+  path: '/restaurants/$restaurantId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
+  '/admin': typeof AdminRoute
+  '/checkout': typeof CheckoutRoute
+  '/explore': typeof ExploreRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/login': typeof LoginRoute
+  '/offers': typeof OffersRoute
+  '/owner': typeof OwnerRoute
+  '/register': typeof RegisterRoute
+  '/orders/$orderId': typeof OrdersOrderIdRoute
+  '/restaurants/$restaurantId': typeof RestaurantsRestaurantIdRoute
+  '/orders/': typeof OrdersIndexRoute
+  '/restaurants/': typeof RestaurantsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
+  '/admin': typeof AdminRoute
+  '/checkout': typeof CheckoutRoute
+  '/explore': typeof ExploreRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/login': typeof LoginRoute
+  '/offers': typeof OffersRoute
+  '/owner': typeof OwnerRoute
+  '/register': typeof RegisterRoute
+  '/orders/$orderId': typeof OrdersOrderIdRoute
+  '/restaurants/$restaurantId': typeof RestaurantsRestaurantIdRoute
+  '/orders': typeof OrdersIndexRoute
+  '/restaurants': typeof RestaurantsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
+  '/admin': typeof AdminRoute
+  '/checkout': typeof CheckoutRoute
+  '/explore': typeof ExploreRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/login': typeof LoginRoute
+  '/offers': typeof OffersRoute
+  '/owner': typeof OwnerRoute
+  '/register': typeof RegisterRoute
+  '/orders/$orderId': typeof OrdersOrderIdRoute
+  '/restaurants/$restaurantId': typeof RestaurantsRestaurantIdRoute
+  '/orders/': typeof OrdersIndexRoute
+  '/restaurants/': typeof RestaurantsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/account'
+    | '/admin'
+    | '/checkout'
+    | '/explore'
+    | '/forgot-password'
+    | '/login'
+    | '/offers'
+    | '/owner'
+    | '/register'
+    | '/orders/$orderId'
+    | '/restaurants/$restaurantId'
+    | '/orders/'
+    | '/restaurants/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/account'
+    | '/admin'
+    | '/checkout'
+    | '/explore'
+    | '/forgot-password'
+    | '/login'
+    | '/offers'
+    | '/owner'
+    | '/register'
+    | '/orders/$orderId'
+    | '/restaurants/$restaurantId'
+    | '/orders'
+    | '/restaurants'
+  id:
+    | '__root__'
+    | '/'
+    | '/account'
+    | '/admin'
+    | '/checkout'
+    | '/explore'
+    | '/forgot-password'
+    | '/login'
+    | '/offers'
+    | '/owner'
+    | '/register'
+    | '/orders/$orderId'
+    | '/restaurants/$restaurantId'
+    | '/orders/'
+    | '/restaurants/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccountRoute: typeof AccountRoute
+  AdminRoute: typeof AdminRoute
+  CheckoutRoute: typeof CheckoutRoute
+  ExploreRoute: typeof ExploreRoute
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
+  LoginRoute: typeof LoginRoute
+  OffersRoute: typeof OffersRoute
+  OwnerRoute: typeof OwnerRoute
+  RegisterRoute: typeof RegisterRoute
+  OrdersOrderIdRoute: typeof OrdersOrderIdRoute
+  RestaurantsRestaurantIdRoute: typeof RestaurantsRestaurantIdRoute
+  OrdersIndexRoute: typeof OrdersIndexRoute
+  RestaurantsIndexRoute: typeof RestaurantsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +221,115 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/account': {
+      id: '/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/explore': {
+      id: '/explore'
+      path: '/explore'
+      fullPath: '/explore'
+      preLoaderRoute: typeof ExploreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/offers': {
+      id: '/offers'
+      path: '/offers'
+      fullPath: '/offers'
+      preLoaderRoute: typeof OffersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/owner': {
+      id: '/owner'
+      path: '/owner'
+      fullPath: '/owner'
+      preLoaderRoute: typeof OwnerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/orders/': {
+      id: '/orders/'
+      path: '/orders'
+      fullPath: '/orders/'
+      preLoaderRoute: typeof OrdersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/orders/$orderId': {
+      id: '/orders/$orderId'
+      path: '/orders/$orderId'
+      fullPath: '/orders/$orderId'
+      preLoaderRoute: typeof OrdersOrderIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/restaurants/': {
+      id: '/restaurants/'
+      path: '/restaurants'
+      fullPath: '/restaurants/'
+      preLoaderRoute: typeof RestaurantsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/restaurants/$restaurantId': {
+      id: '/restaurants/$restaurantId'
+      path: '/restaurants/$restaurantId'
+      fullPath: '/restaurants/$restaurantId'
+      preLoaderRoute: typeof RestaurantsRestaurantIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccountRoute: AccountRoute,
+  AdminRoute: AdminRoute,
+  CheckoutRoute: CheckoutRoute,
+  ExploreRoute: ExploreRoute,
+  ForgotPasswordRoute: ForgotPasswordRoute,
+  LoginRoute: LoginRoute,
+  OffersRoute: OffersRoute,
+  OwnerRoute: OwnerRoute,
+  RegisterRoute: RegisterRoute,
+  OrdersOrderIdRoute: OrdersOrderIdRoute,
+  RestaurantsRestaurantIdRoute: RestaurantsRestaurantIdRoute,
+  OrdersIndexRoute: OrdersIndexRoute,
+  RestaurantsIndexRoute: RestaurantsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
