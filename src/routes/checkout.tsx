@@ -41,8 +41,8 @@ const payments = [
 function Checkout() {
   const cart = useCart();
   const navigate = useNavigate();
-  const [address, setAddress] = useState(addresses[0]);
-  const [payment, setPayment] = useState(payments[0]);
+  const [address, setAddress] = useState(addresses[0]!);
+  const [payment, setPayment] = useState(payments[0]!);
   const [placing, setPlacing] = useState(false);
 
   if (cart.lines.length === 0) {

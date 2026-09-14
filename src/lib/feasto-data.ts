@@ -298,10 +298,10 @@ export const reviews: Review[] = restaurants.flatMap((r, ri) =>
   Array.from({ length: 4 }, (_, i) => ({
     id: `${r.id}-rev-${i}`,
     restaurantId: r.id,
-    author: authors[(ri + i) % authors.length],
-    rating: [5, 4, 5, 4][i],
-    date: ["2 days ago", "1 week ago", "3 weeks ago", "2 months ago"][i],
-    body: reviewBodies[(ri + i) % reviewBodies.length],
+    author: authors[(ri + i) % authors.length]!,
+    rating: [5, 4, 5, 4][i]!,
+    date: ["2 days ago", "1 week ago", "3 weeks ago", "2 months ago"][i]!,
+    body: reviewBodies[(ri + i) % reviewBodies.length]!,
   })),
 );
 
