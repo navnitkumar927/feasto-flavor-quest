@@ -107,11 +107,15 @@ function OwnerPortal() {
             onClick={() =>
               setMenu((prev) => [
                 {
-                  ...prev[0],
                   id: `new-${prev.length}`,
+                  restaurantId: restaurant.id,
+                  section: "Starters",
                   name: `New dish ${prev.length + 1}`,
+                  description: "Describe this dish for your customers.",
                   price: 250,
-                  section: "Starters" as const,
+                  veg: true,
+                  rating: 4.5,
+                  bestseller: false,
                 },
                 ...prev,
               ])
