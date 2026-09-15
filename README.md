@@ -1,619 +1,227 @@
-# Feast Forward
+# 🍴 Feasto — Discover. Order. Enjoy.
 
-Create a premium, production-quality 3-tier food discovery and ordering web application called Feasto.
+> **A modern, production-style 3-tier food discovery and ordering platform built with React, Node.js, Express, PostgreSQL, and Prisma.**
 
-The design should feel as polished, colorful, modern, and engaging as leading food platforms such as Zomato and Swiggy, but it must have its own original branding, UI, layouts, illustrations, and visual identity. Do not copy their exact design.
+Feasto is a full-stack food discovery and ordering application designed to provide a premium, modern experience for discovering restaurants, browsing menus, placing orders, tracking deliveries, and managing accounts.
 
-This is not a basic landing page. Build a complete responsive web application with a beautiful customer experience and a proper 3-tier architecture.
+The project is designed with a **production-oriented 3-tier architecture** and can be integrated with modern **DevOps and DevSecOps tooling** including Docker, Jenkins, SonarQube, Trivy, OWASP ZAP, Nginx, AWS EC2, PostgreSQL, and HTTPS/Certbot.
 
-1. Technology Architecture...
+---
 
-Use:
+## ✨ Features
 
-Frontend:
+### 👤 Customer Experience
+
+* 🔐 User registration and authentication
+* 📍 Location-based restaurant discovery
+* 🔎 Restaurant, dish, and cuisine search
+* 🍕 Food category browsing
+* 🏪 Restaurant discovery
+* 📋 Restaurant detail pages
+* 🍔 Interactive food menus
+* 🛒 Shopping cart
+* 💳 Checkout
+* 📦 Order placement
+* 🚴 Order tracking
+* ⭐ Restaurant and food reviews
+* ❤️ Favorite restaurants
+* 🎁 Offers and discounts
+* 👤 Customer dashboard
+* 📱 Responsive mobile experience
+
+The application includes dedicated experiences for authentication, search, restaurants, carts, checkout, order tracking, offers, and customer dashboards.
+
+---
+
+## 🏪 Restaurant Owner Portal
+
+Restaurant owners can manage their restaurant operations through a dedicated dashboard.
+
+### Capabilities
+
+* Manage restaurant information
+* Add menu items
+* Edit menu items
+* Delete menu items
+* Manage food prices
+* View incoming orders
+* Accept/reject orders
+* Update order status
+* Monitor revenue
+* View analytics
+* Track popular dishes
+* Monitor pending orders
+
+### Dashboard Metrics
+
+* Today's orders
+* Revenue
+* Average rating
+* Popular dishes
+* Pending orders
+
+---
+
+## 🛡️ Admin Dashboard
+
+A dedicated administration interface provides platform-level management and analytics.
 
-React
-
-TypeScript
-
-Tailwind CSS
-
-Modern component architecture
-
-Responsive design
-
-Backend:
-
-Node.js
-
-Express.js
-
-TypeScript
-
-REST API
-
-Database:
-
-PostgreSQL
-
-Prisma ORM
-
-Architecture:
-
-User
-↓
-Nginx / Reverse Proxy
-↓
-React Frontend
-↓
-Node.js REST API
-↓
-PostgreSQL
-
-Keep frontend, backend, and database logically separated.
-
-2. Brand Identity
-
-Brand name:
-
-Feasto
-
-Tagline:
-
-"Discover. Order. Enjoy."
-
-Create a memorable modern food-tech brand.
-
-Use a colorful visual system inspired by food:
-
-Warm coral
-
-Vibrant orange
-
-Raspberry pink
-
-Golden yellow
-
-Fresh green
-
-Deep purple
-
-Clean white backgrounds
-
-Dark charcoal text
-
-Use gradients tastefully.
-
-The website should feel:
-
-Premium
-
-Colorful
-
-Energetic
-
-Friendly
-
-Modern
-
-App-like
-
-Trustworthy
-
-Delicious
-
-Avoid making every section overly colorful. Use colorful gradients and cards strategically with plenty of whitespace.
-
-3. Homepage
-
-Create an impressive homepage.
-
-Hero section:
-
-Large headline:
-
-"Good food is always a good idea."
-
-Supporting text:
-
-"Discover the best restaurants, cafés, and hidden food gems around you."
-
-Large location/search area:
-
-📍 Your location
-
-Search placeholder:
-
-"Search for restaurants, cuisines, or dishes..."
-
-Add:
-
-Search button
-
-Location selector
-
-Search suggestions
-
-Popular searches
-
-Hero background should have an attractive food-themed visual treatment.
-
-Use beautiful food imagery and floating food cards.
-
-4. Main Navigation
-
-Create a premium responsive navbar.
-
-Logo:
-
-🍴 FEASTO
-
-Navigation:
-
-Home
-
-Restaurants
-
-Explore
-
-Offers
-
-Orders
-
-Right side:
-
-Search
-
-Location
-
-Login
-
-Profile
-
-Cart
-
-Desktop and mobile navigation must both be polished.
-
-On mobile, use a beautiful bottom navigation:
-
-Home | Explore | Orders | Profile
-
-5. Food Categories
-
-Create a colorful horizontal category section.
-
-Categories:
-
-🍕 Pizza
-🍔 Burgers
-🍜 Asian
-🍛 Indian
-🌮 Mexican
-🍣 Sushi
-🥗 Healthy
-🍰 Desserts
-☕ Café
-🍗 Chicken
-
-Each category should have:
-
-Beautiful image/icon
-
-Category name
-
-Hover animation
-
-Active state
-
-Use rounded cards and subtle shadows.
-
-6. Restaurant Discovery
-
-Create:
-
-"Popular near you"
-
-Restaurant cards should include:
-
-Restaurant image
-
-Restaurant name
-
-Cuisine
-
-Rating
-
-Delivery time
-
-Price range
-
-Distance
-
-Veg/non-veg indicator
-
-Offer badge
-
-Favorite heart
-
-Delivery badge
-
-Example restaurants:
-
-Spice Route
-
-Burger District
-
-Tokyo Bowl
-
-The Green Fork
-
-Pasta House
-
-Curry Culture
-
-Urban Tandoor
-
-Brew & Bean
-
-These are fictional demo restaurants.
-
-Make the cards visually rich.
-
-7. Restaurant Detail Page
-
-Create a complete restaurant page.
-
-Include:
-
-Large restaurant cover image
-
-Restaurant logo
-
-Name
-
-Rating
-
-Reviews
-
-Cuisine
-
-Price range
-
-Delivery time
-
-Distance
-
-Address
-
-Opening hours
-
-Favorite button
-
-Share button
-
-Tabs:
-
-Overview
-Menu
-Reviews
-Photos
-
-Menu categories:
-
-Recommended
-Starters
-Main Course
-Breads
-Rice
-Beverages
-Desserts
-
-Each food item should have:
-
-Image
-
-Name
-
-Description
-
-Price
-
-Vegetarian indicator
-
-Rating
-
-Add button
-
-The Add button should have smooth animation.
-
-8. Food Cart
-
-Create a beautiful slide-out cart.
-
-Show:
-
-Restaurant
-
-Food items
-
-Quantity controls
-
-Item price
-
-Subtotal
-
-Delivery fee
-
-Taxes
-
-Discount
-
-Total
-
-CTA:
-
-"Proceed to Checkout"
-
-Add an attractive checkout progress indicator.
-
-9. Checkout
-
-Create a premium checkout experience.
-
-Sections:
-
-Delivery Address
-
-Home
-
-Work
-
-Other
-
-Payment
-
-Credit/Debit Card
-
-UPI
-
-Cash on Delivery
-
-Wallet
-
-Order Summary
-
-Show:
-
-Items
-
-Subtotal
-
-Delivery
-
-Taxes
-
-Discount
-
-Total
-
-Primary CTA:
-
-"Place Order"
-
-10. Order Tracking
-
-Create a beautiful real-time-style order tracking page.
-
-Timeline:
-
-✓ Order Confirmed
-
-✓ Restaurant Preparing
-
-🚴 Out for Delivery
-
-○ Delivered
-
-Display:
-
-Estimated delivery time
-
-Delivery partner
-
-Restaurant
-
-Order number
-
-Live map placeholder
-
-Contact delivery partner
-
-Use smooth progress animations.
-
-11. Offers
-
-Create a colorful offers page.
-
-Cards such as:
-
-50% OFF
-
-"On your first order"
-
-FREE DELIVERY
-
-"On orders above ₹299"
-
-₹100 OFF
-
-"Weekend special"
-
-Use large colorful promotional cards.
-
-12. User Dashboard
-
-Create a customer dashboard.
-
-Show:
-
-Profile
-
-Recent orders
-
-Favorite restaurants
-
-Saved addresses
-
-Payment methods
-
-Offers
-
-Account settings
-
-13. Authentication
-
-Create beautiful:
-
-/login
-
-/register
-
-/forgot-password
-
-Login options:
-
-Email
-
-Phone
-
-Google-style social login UI
-
-Use modern authentication forms with validation.
-
-14. Search Experience
-
-Create a powerful search interface.
-
-Search:
-
-Restaurants
-
-Dishes
-
-Cuisines
-
-Categories
-
-Include:
-
-Recent searches
-
-Popular searches
-
-Search suggestions
-
-Filters
-
-Sort options
-
-Filters:
-
-Rating
-
-Delivery time
-
-Price
-
-Cuisine
-
-Vegetarian
-
-Offers
-
-15. Admin Dashboard
-
-Create a separate admin interface.
-
-Admin dashboard should include:
-
-Total users
-
-Total restaurants
-
-Total orders
-
-Revenue
-
-Active orders
-
-Today's orders
-
-Charts:
-
-Revenue
-
-Orders
-
-Users
-
-Popular cuisines
-
-Admin sections:
-
-Users
-
-Restaurants
-
-Menu items
-
-Orders
-
-Payments
-
-Offers
-
-Reviews
-
-Analytics
-
-16. Restaurant Owner Dashboard
-
-Create a restaurant-owner portal.
-
-Restaurant owners can:
-
-Manage restaurant
-
-Add/edit/delete menu items
-
-Manage prices
-
-View orders
-
-Accept/reject orders
-
-Update order status
-
-View revenue
-
-View analytics
-
-Dashboard metrics:
-
-Today's orders
-
-Revenue
-
-Average rating
-
-Popular dishes
-
-Pending orders
-
-17. Database Architecture
-
-Design PostgreSQL schema for:
-
+### Dashboard
+
+* Total users
+* Total restaurants
+* Total orders
+* Revenue
+* Active orders
+* Today's orders
+
+### Management
+
+* Users
+* Restaurants
+* Menu items
+* Orders
+* Payments
+* Offers
+* Reviews
+* Analytics
+
+### Analytics
+
+* Revenue analytics
+* Order analytics
+* User analytics
+* Popular cuisines
+
+---
+
+# 🏗️ System Architecture
+
+Feasto follows a logical **3-tier architecture**:
+
+```text
+                    ┌─────────────────────┐
+                    │       Users         │
+                    │ Desktop / Mobile   │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │  Nginx / Reverse    │
+                    │       Proxy         │
+                    └──────────┬──────────┘
+                               │
+                ┌──────────────┴──────────────┐
+                ▼                             ▼
+      ┌─────────────────┐          ┌─────────────────┐
+      │ React Frontend  │          │ Node.js Backend │
+      │ TypeScript      │◄────────►│ Express.js      │
+      │ Tailwind CSS    │   REST   │ TypeScript      │
+      └─────────────────┘    API   └────────┬────────┘
+                                            │
+                                            ▼
+                                  ┌──────────────────┐
+                                  │   PostgreSQL     │
+                                  │   Prisma ORM     │
+                                  └──────────────────┘
+```
+
+The frontend, backend, and database are logically separated according to the project's architecture requirements.
+
+---
+
+# 🧰 Technology Stack
+
+## Frontend
+
+* React
+* TypeScript
+* Tailwind CSS
+* Responsive UI
+* Reusable component architecture
+
+## Backend
+
+* Node.js
+* Express.js
+* TypeScript
+* REST API
+
+## Database
+
+* PostgreSQL
+* Prisma ORM
+
+## Infrastructure
+
+* Docker
+* Docker Compose
+* Nginx
+* AWS EC2
+* HTTPS / Certbot
+
+## DevOps & DevSecOps
+
+Designed for integration with:
+
+* Jenkins
+* SonarQube
+* Trivy
+* OWASP Dependency-Check
+* OWASP ZAP
+* Docker
+* Nginx
+* PostgreSQL
+* AWS EC2
+* Certbot
+
+---
+
+# 📁 Project Structure
+
+```text
+feasto/
+│
+├── frontend/
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── hooks/
+│   └── ...
+│
+├── backend/
+│   ├── src/
+│   ├── routes/
+│   ├── controllers/
+│   ├── services/
+│   ├── middleware/
+│   └── ...
+│
+├── database/
+│   ├── prisma/
+│   ├── migrations/
+│   └── seed/
+│
+├── nginx/
+│   └── nginx.conf
+│
+├── docker-compose.yml
+├── .env.example
+├── Dockerfile
+└── README.md
+```
+
+The intended production structure separates `frontend`, `backend`, `database`, and `nginx` components.
+
+---
+
+# 🗄️ Database Design
+
+Feasto uses **PostgreSQL with Prisma ORM**.
+
+Core entities include:
+
+```text
 Users
 Restaurants
 RestaurantOwners
@@ -629,350 +237,523 @@ Offers
 Cart
 Notifications
 DeliveryPartners
+```
 
-Use proper:
+The database design uses:
 
-Relationships
+* Foreign keys
+* Relationships
+* Indexes
+* Constraints
+* Timestamps
+* Prisma ORM
 
-Foreign keys
+---
 
-Indexes
+# 🔌 REST API
 
-Constraints
+The backend follows a versioned REST API structure.
 
-Timestamps
+## Authentication
 
-Use Prisma ORM.
+```http
+POST /api/v1/auth/register
+POST /api/v1/auth/login
+POST /api/v1/auth/logout
+```
 
-18. Backend API
+## Restaurants
 
-Create REST APIs.
+```http
+GET /api/v1/restaurants
+GET /api/v1/restaurants/:id
+```
 
-Authentication:
+## Menu
 
-/api/v1/auth/register
-/api/v1/auth/login
-/api/v1/auth/logout
+```http
+GET /api/v1/restaurants/:id/menu
+```
 
-Restaurants:
+## Orders
 
-/api/v1/restaurants
-/api/v1/restaurants/:id
+```http
+GET  /api/v1/orders
+POST /api/v1/orders
+GET  /api/v1/orders/:id
+```
 
-Menu:
+## Cart
 
-/api/v1/restaurants/:id/menu
+```http
+GET /api/v1/cart
+```
 
-Orders:
+## Reviews
 
-/api/v1/orders
-/api/v1/orders/:id
+```http
+GET  /api/v1/reviews
+POST /api/v1/reviews
+```
 
-Cart:
+## Offers
 
-/api/v1/cart
+```http
+GET /api/v1/offers
+```
 
-Reviews:
+## Users
 
-/api/v1/reviews
+```http
+GET /api/v1/users
+```
 
-Offers:
+## Admin
 
-/api/v1/offers
-
-Users:
-
-/api/v1/users
-
-Admin:
-
+```http
 /api/v1/admin/*
+```
 
-Health:
+## Health Check
 
-/api/v1/health
+```http
+GET /api/v1/health
+```
 
-Implement:
+The API specification includes authentication, restaurants, menus, orders, carts, reviews, offers, users, admin functionality, and health checks.
 
-Authentication
+---
 
-Authorization
+# 🔐 Security
 
-Validation
+Security is treated as an important part of the application architecture.
 
-Pagination
+The backend is designed to implement:
 
-Filtering
+* Authentication
+* Authorization
+* Request validation
+* Pagination
+* Filtering
+* Sorting
+* Centralized error handling
+* Rate limiting
+* Security headers
+* CORS configuration
 
-Sorting
+Sensitive configuration must be supplied through environment variables.
 
-Error handling
+### Never commit:
 
-Rate limiting
-
-Security headers
-
-CORS
-
-19. UI/UX Requirements
-
-This is extremely important.
-
-Make the website feel like a premium modern food-tech application.
-
-Use:
-
-Large rounded cards
-
-Soft shadows
-
-Smooth hover effects
-
-Micro animations
-
-Gradient backgrounds
-
-Beautiful food imagery
-
-Glass effects where appropriate
-
-Sticky navigation
-
-Animated buttons
-
-Skeleton loading
-
-Toast notifications
-
-Empty states
-
-Error states
-
-Use animations carefully.
-
-Do not over-animate the interface.
-
-Prioritize performance and usability.
-
-20. Responsive Design
-
-The application must work perfectly on:
-
-Desktop
-
-Laptop
-
-Tablet
-
-Mobile
-
-Mobile experience should feel like a native food-ordering app.
-
-Use:
-
-Bottom navigation
-
-Sticky cart
-
-Swipeable categories
-
-Responsive cards
-
-Mobile-friendly checkout
-
-21. Accessibility
-
-Implement:
-
-Semantic HTML
-
-Keyboard navigation
-
-Accessible forms
-
-Proper labels
-
-ARIA where required
-
-Good color contrast
-
-Visible focus states
-
-22. Production Architecture
-
-Create:
-
-frontend/
-backend/
-database/
-nginx/
-
-Include:
-
-docker-compose.yml
-.env.example
-Dockerfiles
-README.md
-
-Use environment variables.
-
-Never hardcode:
-
+```text
 Database passwords
-
 JWT secrets
-
 API keys
-
 Payment credentials
+.env
+Private SSH keys
+```
 
-23. Demo Data
+Use the provided environment template:
 
-Populate the application with realistic fictional data.
+```bash
+cp .env.example .env
+```
 
-Create:
+---
 
-20+ restaurants
+# 🎨 UI / UX
 
-100+ menu items
+Feasto is designed to feel like a premium food-tech product rather than a generic template.
 
-Multiple categories
+### Design Principles
 
-Multiple users
+* Modern rounded cards
+* Soft shadows
+* Smooth hover effects
+* Micro-interactions
+* Carefully used gradients
+* Food imagery
+* Glass effects where appropriate
+* Sticky navigation
+* Animated buttons
+* Skeleton loading
+* Toast notifications
+* Empty states
+* Error states
+* Responsive layouts
 
-Sample orders
+Animations are intentionally kept subtle so that usability and performance remain the priority.
 
-Reviews
+---
 
-Offers
+# 📱 Responsive Design
 
-Favorites
+Feasto is designed for:
 
-Make the application look populated when first launched.
+* 💻 Desktop
+* 💻 Laptop
+* 📱 Tablet
+* 📱 Mobile
 
-24. Important UI Details
+Mobile-specific functionality includes:
 
-Add a floating cart button.
+* Bottom navigation
+* Sticky cart
+* Swipeable categories
+* Responsive restaurant cards
+* Mobile-friendly checkout
 
-Add notification animations.
+---
 
-Add favorite heart animations.
+# ♿ Accessibility
 
-Add food image hover effects.
+The application follows accessibility-focused UI practices:
 
-Add restaurant card hover effects.
+* Semantic HTML
+* Keyboard navigation
+* Accessible forms
+* Proper form labels
+* ARIA attributes where required
+* Good color contrast
+* Visible focus states
 
-Add smooth page transitions.
+---
 
-Add skeleton loaders.
+# 🐳 Running with Docker
 
-Add beautiful confirmation dialogs.
+Build and start the application:
 
-Add toast notifications.
+```bash
+docker compose up -d --build
+```
 
-Create attractive loading screens.
+Check running containers:
 
-Create a polished 404 page.
+```bash
+docker compose ps
+```
 
-Create a polished error page.
+View logs:
 
-25. Final Quality Requirement
+```bash
+docker compose logs -f
+```
 
-Do NOT create a generic template.
+Stop the application:
 
-The final application should feel like a real startup product that could be shown in a professional portfolio.
+```bash
+docker compose down
+```
 
-The visual quality should be comparable to modern food delivery platforms.
+---
 
-Use original branding and UI.
+# 💻 Local Development
 
-Do not copy Zomato's exact interface, branding, logo, colors, text, or assets.
+## Prerequisites
 
-Build the application so that it can later be connected to:
+Make sure you have:
 
-Jenkins
+* Node.js
+* npm
+* PostgreSQL
+* Git
 
-SonarQube
+Clone the repository:
 
-OWASP Dependency-Check
-
-Trivy
-
-OWASP ZAP
-
-Docker
-
-Nginx
-
-PostgreSQL
-
-AWS EC2
-
-HTTPS/Certbot
-
-Start by creating the complete frontend experience and reusable component system.
-
-Then implement the backend API.
-
-Then connect PostgreSQL through Prisma.
-
-Finally verify that the entire 3-tier application works end-to-end.
-
-Before considering the project complete, test:
-
-Registration
-
-Login
-
-Restaurant browsing
-
-Search
-
-Filtering
-
-Restaurant details
-
-Menu
-
-Cart
-
-Checkout
-
-Order creation
-
-Order tracking
-
-Reviews
-
-Favorites
-
-Admin dashboard
-
-Restaurant owner dashboard
-
-Responsive mobile UI
-
-Fix all errors and broken states.
-
-The final result should be a colorful, premium, production-style 3-tier food ordering platform named FEASTO.
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/e9408755-dce7-44ad-8b3e-a873f854c1f7).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
+```bash
+git clone <your-repository-url>
 cd <repository-name>
-npm i
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create environment variables:
+
+```bash
+cp .env.example .env
+```
+
+Start the development server:
+
+```bash
 npm run dev
 ```
+
+The original project setup also supports local development through Node.js/npm.
+
+---
+
+# ⚙️ Environment Variables
+
+Example configuration:
+
+```env
+NODE_ENV=development
+
+PORT=4000
+
+DATABASE_URL=postgresql://user:password@localhost:5432/feasto
+
+JWT_SECRET=your-super-secret-key
+
+CORS_ORIGIN=http://localhost:3000
+
+API_URL=http://localhost:4000
+```
+
+> ⚠️ Do not commit real credentials to GitHub.
+
+---
+
+# 🌱 Demo Data
+
+The application is designed to include realistic fictional data so that the platform feels populated immediately after launch.
+
+Target demo dataset:
+
+* 20+ restaurants
+* 100+ menu items
+* Multiple food categories
+* Multiple users
+* Sample orders
+* Reviews
+* Offers
+* Favorites
+
+All restaurant and food data are fictional demo content.
+
+---
+
+# 🧪 Testing Checklist
+
+Before considering the application production-ready, verify:
+
+```text
+☑ Registration
+☑ Login
+☑ Restaurant browsing
+☑ Search
+☑ Filtering
+☑ Restaurant details
+☑ Menu browsing
+☑ Cart
+☑ Checkout
+☑ Order creation
+☑ Order tracking
+☑ Reviews
+☑ Favorites
+☑ Admin dashboard
+☑ Restaurant owner dashboard
+☑ Responsive mobile UI
+```
+
+The project specification explicitly calls for end-to-end verification of these core workflows.
+
+---
+
+# 🚀 DevOps / DevSecOps Roadmap
+
+Feasto is designed to evolve into a complete CI/CD and DevSecOps project.
+
+### Planned Pipeline
+
+```text
+Developer
+    │
+    ▼
+GitHub
+    │
+    ▼
+Jenkins CI/CD
+    │
+    ├── Build
+    │
+    ├── Unit Tests
+    │
+    ├── SonarQube
+    │
+    ├── OWASP Dependency-Check
+    │
+    ├── Trivy
+    │
+    ├── Docker Build
+    │
+    ├── OWASP ZAP
+    │
+    ▼
+Docker Registry
+    │
+    ▼
+AWS EC2
+    │
+    ▼
+Nginx
+    │
+    ▼
+HTTPS / Certbot
+    │
+    ▼
+Feasto
+```
+
+This makes the project suitable for demonstrating **Cloud, DevOps, CI/CD, containerization, security scanning, and deployment automation**.
+
+---
+
+# ☁️ Production Deployment Architecture
+
+A production deployment can follow this structure:
+
+```text
+                         Internet
+                            │
+                            ▼
+                     ┌─────────────┐
+                     │   HTTPS     │
+                     │  Certbot    │
+                     └──────┬──────┘
+                            │
+                            ▼
+                     ┌─────────────┐
+                     │    Nginx    │
+                     │ Reverse     │
+                     │ Proxy       │
+                     └──────┬──────┘
+                            │
+             ┌──────────────┴──────────────┐
+             ▼                             ▼
+      ┌─────────────┐               ┌─────────────┐
+      │  Frontend   │               │   Backend   │
+      │   React     │               │ Node/Express│
+      └─────────────┘               └──────┬──────┘
+                                           │
+                                           ▼
+                                    ┌─────────────┐
+                                    │ PostgreSQL  │
+                                    │ + Prisma    │
+                                    └─────────────┘
+```
+
+---
+
+# 📊 Project Goals
+
+Feasto is built with the goal of demonstrating a complete software delivery lifecycle:
+
+```text
+Development
+     ↓
+Version Control
+     ↓
+CI/CD
+     ↓
+Testing
+     ↓
+Code Quality
+     ↓
+Security Scanning
+     ↓
+Containerization
+     ↓
+Deployment
+     ↓
+Monitoring
+     ↓
+Continuous Improvement
+```
+
+---
+
+# 🎯 Portfolio Highlights
+
+This project demonstrates practical experience with:
+
+* Full-stack application architecture
+* React development
+* TypeScript
+* REST API development
+* PostgreSQL
+* Prisma ORM
+* Authentication & authorization
+* Docker
+* Nginx
+* AWS deployment
+* CI/CD
+* Jenkins
+* SonarQube
+* Container security
+* Dependency security
+* OWASP ZAP
+* Infrastructure-oriented deployment
+* Responsive UI/UX
+
+---
+
+# 📌 Project Status
+
+🚧 **Active Development**
+
+The application is being developed as a production-style portfolio project with a focus on **full-stack engineering, cloud deployment, DevOps, and DevSecOps practices**.
+
+---
+
+# 🤝 Contributing
+
+Contributions, suggestions, and improvements are welcome.
+
+```bash
+git checkout -b feature/your-feature
+git add .
+git commit -m "feat: add your feature"
+git push origin feature/your-feature
+```
+
+Then open a Pull Request.
+
+---
+
+# 📄 License
+
+This project is intended for educational, portfolio, and development purposes.
+
+Add your preferred license here, for example:
+
+```text
+MIT License
+```
+
+---
+
+# 👨‍💻 Author
+
+**Navnit Rathore**
+
+DevOps Engineer | Cloud | DevSecOps
+
+Interested in:
+
+```text
+AWS
+Docker
+Kubernetes
+Terraform
+Jenkins
+CI/CD
+DevSecOps
+Cloud Security
+```
+
+---
+
+## ⭐ If you like this project
+
+Give the repository a ⭐ and feel free to explore the code, architecture, and deployment workflow.
+
+---
+
+> **Feasto — Discover. Order. Enjoy. 🍴**
