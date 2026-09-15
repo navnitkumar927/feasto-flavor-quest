@@ -105,7 +105,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const existing = prev.lines.find((l) => l.id === item.id);
       const lines = existing
         ? prev.lines.map((l) => (l.id === item.id ? { ...l, qty: l.qty + 1 } : l))
-        : [...prev.lines, { id: item.id, name: item.name, price: item.price, veg: item.veg, qty: 1 }];
+        : [
+            ...prev.lines,
+            { id: item.id, name: item.name, price: item.price, veg: item.veg, qty: 1 },
+          ];
       return { restaurantId: item.restaurantId, lines };
     });
   }, []);
@@ -170,7 +173,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const value = useMemo<CartContextValue>(
     () => ({
       restaurantId: cart.restaurantId,
-      restaurantName: cart.restaurantId ? getRestaurant(cart.restaurantId)?.name ?? null : null,
+      restaurantName: cart.restaurantId ? (getRestaurant(cart.restaurantId)?.name ?? null) : null,
       lines: cart.lines,
       count,
       subtotal,
@@ -190,7 +193,24 @@ export function CartProvider({ children }: { children: ReactNode }) {
       orders,
       placeOrder,
     }),
-    [cart, count, subtotal, deliveryFee, taxes, discount, total, cartOpen, addItem, increment, decrement, clear, favorites, toggleFavorite, orders, placeOrder],
+    [
+      cart,
+      count,
+      subtotal,
+      deliveryFee,
+      taxes,
+      discount,
+      total,
+      cartOpen,
+      addItem,
+      increment,
+      decrement,
+      clear,
+      favorites,
+      toggleFavorite,
+      orders,
+      placeOrder,
+    ],
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

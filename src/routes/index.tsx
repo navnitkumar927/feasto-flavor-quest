@@ -31,15 +31,16 @@ function Home() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<string | null>(null);
 
-  const suggestions = query.length > 1
-    ? restaurants
-        .filter(
-          (r) =>
-            r.name.toLowerCase().includes(query.toLowerCase()) ||
-            r.cuisines.some((c) => c.toLowerCase().includes(query.toLowerCase())),
-        )
-        .slice(0, 5)
-    : [];
+  const suggestions =
+    query.length > 1
+      ? restaurants
+          .filter(
+            (r) =>
+              r.name.toLowerCase().includes(query.toLowerCase()) ||
+              r.cuisines.some((c) => c.toLowerCase().includes(query.toLowerCase())),
+          )
+          .slice(0, 5)
+      : [];
 
   const featured = restaurants.filter((r) => (category ? r.categories.includes(category) : true));
 
@@ -197,7 +198,8 @@ function Home() {
               <p className="font-display text-3xl font-extrabold">{o.title}</p>
               <p className="mt-1 text-sm opacity-95">{o.subtitle}</p>
               <p className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider">
-                Use {o.code} <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+                Use {o.code}{" "}
+                <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
               </p>
             </Link>
           ))}
@@ -209,7 +211,11 @@ function Home() {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <SectionHead
             title="Popular near you"
-            subtitle={category ? "Filtered by your category pick." : "Loved by people in your neighbourhood."}
+            subtitle={
+              category
+                ? "Filtered by your category pick."
+                : "Loved by people in your neighbourhood."
+            }
           />
           <Button asChild variant="outline" className="rounded-full">
             <Link to="/restaurants">

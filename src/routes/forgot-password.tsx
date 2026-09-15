@@ -34,7 +34,9 @@ function ForgotPassword() {
     }
     setError(undefined);
     setSent(true);
-    toast.success("Reset link sent", { description: "Demo flow — no email is actually delivered." });
+    toast.success("Reset link sent", {
+      description: "Demo flow — no email is actually delivered.",
+    });
   }
 
   return (
@@ -59,7 +61,13 @@ function ForgotPassword() {
         </div>
       ) : (
         <form onSubmit={submit} className="space-y-4" noValidate>
-          <Field label="Email" name="email" type="email" error={error} placeholder="you@example.com" />
+          <Field
+            label="Email"
+            name="email"
+            type="email"
+            error={error}
+            placeholder="you@example.com"
+          />
           <Button type="submit" size="lg" className="w-full rounded-full">
             Send reset link
           </Button>

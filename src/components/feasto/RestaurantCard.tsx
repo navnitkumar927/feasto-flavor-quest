@@ -41,12 +41,19 @@ export function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
       <button
         type="button"
         onClick={() => toggleFavorite(restaurant.id)}
-        aria-label={liked ? `Remove ${restaurant.name} from favourites` : `Save ${restaurant.name} to favourites`}
+        aria-label={
+          liked
+            ? `Remove ${restaurant.name} from favourites`
+            : `Save ${restaurant.name} to favourites`
+        }
         aria-pressed={liked}
         className="absolute right-3 top-3 grid size-9 place-items-center rounded-full bg-card/90 shadow-[var(--shadow-soft)] transition-transform hover:scale-110 active:scale-95"
       >
         <Heart
-          className={cn("size-4.5 transition-colors", liked ? "fill-raspberry text-raspberry pop-in" : "text-muted-foreground")}
+          className={cn(
+            "size-4.5 transition-colors",
+            liked ? "fill-raspberry text-raspberry pop-in" : "text-muted-foreground",
+          )}
         />
       </button>
 

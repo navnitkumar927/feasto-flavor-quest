@@ -36,7 +36,11 @@ export function AuthShell({
         <div className="mt-6">{children}</div>
         <div className="mt-6 text-sm text-muted-foreground">{footer}</div>
         <p className="mt-6 text-center text-xs text-muted-foreground">
-          By continuing you agree to Feasto's <Link to="/" className="underline">terms</Link>.
+          By continuing you agree to Feasto's{" "}
+          <Link to="/" className="underline">
+            terms
+          </Link>
+          .
         </p>
       </div>
     </div>

@@ -43,7 +43,10 @@ export function CartDrawer() {
             </div>
             <div className="flex-1 space-y-3 overflow-y-auto p-5">
               {cart.lines.map((line) => (
-                <div key={line.id} className="flex items-start gap-3 rounded-2xl bg-secondary/60 p-3">
+                <div
+                  key={line.id}
+                  className="flex items-start gap-3 rounded-2xl bg-secondary/60 p-3"
+                >
                   <span
                     className={`mt-1 size-3 shrink-0 rounded-sm border-2 ${line.veg ? "border-leaf" : "border-raspberry"}`}
                     aria-label={line.veg ? "Vegetarian" : "Non-vegetarian"}
@@ -59,7 +62,11 @@ export function CartDrawer() {
                       aria-label={`Reduce ${line.name}`}
                       className="grid size-7 place-items-center rounded-full text-primary transition-colors hover:bg-accent"
                     >
-                      {line.qty === 1 ? <Trash2 className="size-3.5" /> : <Minus className="size-3.5" />}
+                      {line.qty === 1 ? (
+                        <Trash2 className="size-3.5" />
+                      ) : (
+                        <Minus className="size-3.5" />
+                      )}
                     </button>
                     <span className="w-5 text-center text-sm font-bold">{line.qty}</span>
                     <button

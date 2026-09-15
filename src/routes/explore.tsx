@@ -5,12 +5,7 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { RestaurantCard } from "@/components/feasto/RestaurantCard";
 import { CategoryStrip } from "@/components/feasto/CategoryStrip";
-import {
-  formatINR,
-  menuItems,
-  popularSearches,
-  restaurants,
-} from "@/lib/feasto-data";
+import { formatINR, menuItems, popularSearches, restaurants } from "@/lib/feasto-data";
 
 const searchSchema = z.object({ q: z.string().optional() });
 const RECENT_KEY = "feasto.recent-searches";
@@ -122,9 +117,7 @@ function Explore() {
         </Button>
       </form>
 
-      {recent.length > 0 && (
-        <Chips title="Recent searches" items={recent} />
-      )}
+      {recent.length > 0 && <Chips title="Recent searches" items={recent} />}
       <Chips title="Popular searches" items={popularSearches} />
 
       <div className="mt-8">

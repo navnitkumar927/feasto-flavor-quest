@@ -51,7 +51,11 @@ function OwnerPortal() {
         <Stat label="Today's orders" value="46" gradient="gradient-sunset" />
         <Stat label="Revenue today" value={formatINR(28450)} gradient="gradient-mango" />
         <Stat label="Average rating" value={String(restaurant.rating)} gradient="gradient-garden" />
-        <Stat label="Pending orders" value={String(queue.filter((q) => q.status === "Pending").length)} gradient="gradient-berry" />
+        <Stat
+          label="Pending orders"
+          value={String(queue.filter((q) => q.status === "Pending").length)}
+          gradient="gradient-berry"
+        />
         <Stat label="Menu items" value={String(menu.length)} gradient="gradient-sunset" />
       </div>
 
@@ -138,7 +142,9 @@ function OwnerPortal() {
                   value={m.price}
                   onChange={(e) =>
                     setMenu((prev) =>
-                      prev.map((x) => (x.id === m.id ? { ...x, price: Number(e.target.value) } : x)),
+                      prev.map((x) =>
+                        x.id === m.id ? { ...x, price: Number(e.target.value) } : x,
+                      ),
                     )
                   }
                   className="w-24 rounded-xl border border-border bg-background px-3 py-1.5 text-sm"
@@ -188,7 +194,9 @@ function OwnerPortal() {
 
 function Stat({ label, value, gradient }: { label: string; value: string; gradient: string }) {
   return (
-    <div className={`rounded-3xl p-5 text-primary-foreground shadow-[var(--shadow-soft)] ${gradient}`}>
+    <div
+      className={`rounded-3xl p-5 text-primary-foreground shadow-[var(--shadow-soft)] ${gradient}`}
+    >
       <p className="text-xs font-bold uppercase tracking-wider opacity-90">{label}</p>
       <p className="mt-1 font-display text-2xl font-extrabold">{value}</p>
     </div>

@@ -14,7 +14,10 @@ export const Route = createFileRoute("/offers")({
           "Save on every order with Feasto offers: 50% off your first order, free delivery above ₹299 and weekend discounts.",
       },
       { property: "og:title", content: "Offers & coupons — Feasto" },
-      { property: "og:description", content: "50% off first orders, free delivery and weekend deals." },
+      {
+        property: "og:description",
+        content: "50% off first orders, free delivery and weekend deals.",
+      },
     ],
   }),
   component: OffersPage,

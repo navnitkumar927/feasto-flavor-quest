@@ -118,7 +118,12 @@ function RestaurantsPage() {
             <h2 className="font-display text-base font-bold">Quick filters</h2>
             <div className="mt-3 space-y-3">
               <Toggle id="veg" label="Pure vegetarian" checked={vegOnly} onChange={setVegOnly} />
-              <Toggle id="offers" label="Has offers" checked={offersOnly} onChange={setOffersOnly} />
+              <Toggle
+                id="offers"
+                label="Has offers"
+                checked={offersOnly}
+                onChange={setOffersOnly}
+              />
               <Toggle id="fast" label="Under 30 min" checked={fastOnly} onChange={setFastOnly} />
               <Toggle id="rated" label="Rated 4.5+" checked={topRated} onChange={setTopRated} />
             </div>

@@ -24,7 +24,9 @@ export function CategoryStrip({
             onClick={() => onSelect?.(isActive ? null : c.id)}
             className={cn(
               "group w-24 shrink-0 snap-start rounded-3xl border bg-card p-3 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]",
-              isActive ? "border-primary shadow-[var(--shadow-lift)]" : "border-border shadow-[var(--shadow-soft)]",
+              isActive
+                ? "border-primary shadow-[var(--shadow-lift)]"
+                : "border-border shadow-[var(--shadow-soft)]",
             )}
           >
             <span

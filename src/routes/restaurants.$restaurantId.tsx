@@ -25,7 +25,10 @@ export const Route = createFileRoute("/restaurants/$restaurantId")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Restaurant unavailable — Feasto" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "Restaurant unavailable — Feasto" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     const r = loaderData.restaurant;
@@ -51,7 +54,9 @@ function RestaurantDetail() {
   const liked = favorites.includes(restaurant.id);
 
   const recommended = menu.filter((m) => m.bestseller);
-  const similar = restaurants.filter((r) => r.kitchen === restaurant.kitchen && r.id !== restaurant.id).slice(0, 3);
+  const similar = restaurants
+    .filter((r) => r.kitchen === restaurant.kitchen && r.id !== restaurant.id)
+    .slice(0, 3);
 
   return (
     <div>
@@ -73,7 +78,9 @@ function RestaurantDetail() {
               <Utensils className="size-7" aria-hidden />
             </span>
             <div className="min-w-[220px] flex-1">
-              <h1 className="font-display text-2xl font-extrabold sm:text-3xl">{restaurant.name}</h1>
+              <h1 className="font-display text-2xl font-extrabold sm:text-3xl">
+                {restaurant.name}
+              </h1>
               <p className="mt-1 text-sm text-muted-foreground">
                 {restaurant.cuisines.join(" • ")} · {formatINR(restaurant.priceForTwo)} for two
               </p>
@@ -121,25 +128,46 @@ function RestaurantDetail() {
 
         <Tabs defaultValue="menu" className="mt-8">
           <TabsList className="rounded-full">
-            <TabsTrigger value="overview" className="rounded-full">Overview</TabsTrigger>
-            <TabsTrigger value="menu" className="rounded-full">Menu</TabsTrigger>
-            <TabsTrigger value="reviews" className="rounded-full">Reviews</TabsTrigger>
-            <TabsTrigger value="photos" className="rounded-full">Photos</TabsTrigger>
+            <TabsTrigger value="overview" className="rounded-full">
+              Overview
+            </TabsTrigger>
+            <TabsTrigger value="menu" className="rounded-full">
+              Menu
+            </TabsTrigger>
+            <TabsTrigger value="reviews" className="rounded-full">
+              Reviews
+            </TabsTrigger>
+            <TabsTrigger value="photos" className="rounded-full">
+              Photos
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="mt-6 space-y-6">
             <div className="grid gap-4 sm:grid-cols-3">
-              <InfoCard title="Delivery" value={`${restaurant.deliveryMins} min`} note="Average, live traffic aware" />
-              <InfoCard title="Cost for two" value={formatINR(restaurant.priceForTwo)} note="Excluding taxes" />
-              <InfoCard title="Kitchen type" value={restaurant.pureVeg ? "Pure veg" : "Veg & non-veg"} note="Marked on every dish" />
+              <InfoCard
+                title="Delivery"
+                value={`${restaurant.deliveryMins} min`}
+                note="Average, live traffic aware"
+              />
+              <InfoCard
+                title="Cost for two"
+                value={formatINR(restaurant.priceForTwo)}
+                note="Excluding taxes"
+              />
+              <InfoCard
+                title="Kitchen type"
+                value={restaurant.pureVeg ? "Pure veg" : "Veg & non-veg"}
+                note="Marked on every dish"
+              />
             </div>
             <div className="rounded-3xl border border-border bg-card p-6">
               <h2 className="font-display text-lg font-bold">About {restaurant.name}</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {restaurant.name} is a neighbourhood favourite serving {restaurant.cuisines.join(" and ")}{" "}
-                cooked to order. The kitchen runs a small daily menu so everything leaves hot, and the
-                team packs each order in tamper-proof, spill-safe boxes. Seating, takeaway and Feasto
-                delivery all run from {restaurant.hours}.
+                {restaurant.name} is a neighbourhood favourite serving{" "}
+                {restaurant.cuisines.join(" and ")} cooked to order. The kitchen runs a small daily
+                menu so everything leaves hot, and the team packs each order in tamper-proof,
+                spill-safe boxes. Seating, takeaway and Feasto delivery all run from{" "}
+                {restaurant.hours}.
               </p>
             </div>
             {similar.length > 0 && (
@@ -166,9 +194,7 @@ function RestaurantDetail() {
           </TabsContent>
 
           <TabsContent value="menu" className="mt-6">
-            {recommended.length > 0 && (
-              <MenuSectionBlock title="Recommended" items={recommended} />
-            )}
+            {recommended.length > 0 && <MenuSectionBlock title="Recommended" items={recommended} />}
             {MENU_SECTIONS.filter((s) => s !== "Recommended").map((section) => {
               const items = menu.filter((m) => m.section === section);
               if (!items.length) return null;
@@ -227,7 +253,8 @@ function MenuSectionBlock({ title, items }: { title: string; items: MenuItem[] }
   return (
     <section className="mb-8">
       <h2 className="font-display text-xl font-extrabold">
-        {title} <span className="text-sm font-semibold text-muted-foreground">({items.length})</span>
+        {title}{" "}
+        <span className="text-sm font-semibold text-muted-foreground">({items.length})</span>
       </h2>
       <ul className="mt-4 divide-y divide-border overflow-hidden rounded-3xl border border-border bg-card">
         {items.map((item) => (

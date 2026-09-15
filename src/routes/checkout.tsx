@@ -15,10 +15,14 @@ export const Route = createFileRoute("/checkout")({
       { title: "Checkout — Feasto" },
       {
         name: "description",
-        content: "Confirm your delivery address, choose a payment method and place your Feasto order.",
+        content:
+          "Confirm your delivery address, choose a payment method and place your Feasto order.",
       },
       { property: "og:title", content: "Checkout — Feasto" },
-      { property: "og:description", content: "Address, payment and order summary in one clean step." },
+      {
+        property: "og:description",
+        content: "Address, payment and order summary in one clean step.",
+      },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -27,8 +31,18 @@ export const Route = createFileRoute("/checkout")({
 
 const addresses = [
   { id: "home", label: "Home", icon: Home, value: "402 Palm Grove, Bandra West, Mumbai 400050" },
-  { id: "work", label: "Work", icon: Home, value: "7th floor, Beacon Tower, Lower Parel, Mumbai 400013" },
-  { id: "other", label: "Other", icon: Home, value: "Flat 12, Sea Breeze, Khar West, Mumbai 400052" },
+  {
+    id: "work",
+    label: "Work",
+    icon: Home,
+    value: "7th floor, Beacon Tower, Lower Parel, Mumbai 400013",
+  },
+  {
+    id: "other",
+    label: "Other",
+    icon: Home,
+    value: "Flat 12, Sea Breeze, Khar West, Mumbai 400052",
+  },
 ];
 
 const payments = [
@@ -94,7 +108,9 @@ function Checkout() {
                   onClick={() => setAddress(a)}
                   className={cn(
                     "flex w-full items-start gap-3 rounded-2xl border p-4 text-left transition-colors",
-                    address.id === a.id ? "border-primary bg-accent/60" : "border-border hover:border-primary",
+                    address.id === a.id
+                      ? "border-primary bg-accent/60"
+                      : "border-border hover:border-primary",
                   )}
                 >
                   <a.icon className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
@@ -118,7 +134,9 @@ function Checkout() {
                   onClick={() => setPayment(p)}
                   className={cn(
                     "flex items-start gap-3 rounded-2xl border p-4 text-left transition-colors",
-                    payment.id === p.id ? "border-primary bg-accent/60" : "border-border hover:border-primary",
+                    payment.id === p.id
+                      ? "border-primary bg-accent/60"
+                      : "border-border hover:border-primary",
                   )}
                 >
                   <p.icon className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />

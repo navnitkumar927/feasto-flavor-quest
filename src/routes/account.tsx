@@ -10,10 +10,14 @@ export const Route = createFileRoute("/account")({
       { title: "Your Feasto dashboard" },
       {
         name: "description",
-        content: "Manage your Feasto profile, orders, favourite restaurants, addresses and payment methods.",
+        content:
+          "Manage your Feasto profile, orders, favourite restaurants, addresses and payment methods.",
       },
       { property: "og:title", content: "Your Feasto dashboard" },
-      { property: "og:description", content: "Profile, orders, favourites, addresses and payments." },
+      {
+        property: "og:description",
+        content: "Profile, orders, favourites, addresses and payments.",
+      },
     ],
   }),
   component: Account,
@@ -83,9 +87,15 @@ function Account() {
 
         <Panel title="Saved addresses" icon={MapPin}>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><strong className="text-foreground">Home</strong> — 402 Palm Grove, Bandra West</li>
-            <li><strong className="text-foreground">Work</strong> — Beacon Tower, Lower Parel</li>
-            <li><strong className="text-foreground">Other</strong> — Sea Breeze, Khar West</li>
+            <li>
+              <strong className="text-foreground">Home</strong> — 402 Palm Grove, Bandra West
+            </li>
+            <li>
+              <strong className="text-foreground">Work</strong> — Beacon Tower, Lower Parel
+            </li>
+            <li>
+              <strong className="text-foreground">Other</strong> — Sea Breeze, Khar West
+            </li>
           </ul>
         </Panel>
 
@@ -102,7 +112,10 @@ function Account() {
             {offers.slice(0, 3).map((o) => (
               <li key={o.id}>
                 <span className="font-semibold">{o.title}</span>
-                <span className="text-muted-foreground"> — {o.subtitle} ({o.code})</span>
+                <span className="text-muted-foreground">
+                  {" "}
+                  — {o.subtitle} ({o.code})
+                </span>
               </li>
             ))}
           </ul>

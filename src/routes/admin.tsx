@@ -1,12 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Bar, BarChart, CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+} from "recharts";
 import { formatINR, menuItems, restaurants } from "@/lib/feasto-data";
 
 export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
       { title: "Admin console — Feasto" },
-      { name: "description", content: "Platform metrics for Feasto: users, restaurants, orders and revenue." },
+      {
+        name: "description",
+        content: "Platform metrics for Feasto: users, restaurants, orders and revenue.",
+      },
       { property: "og:title", content: "Admin console — Feasto" },
       { property: "og:description", content: "Users, restaurants, orders, revenue and analytics." },
       { name: "robots", content: "noindex" },
@@ -34,7 +46,16 @@ const cuisineSplit = [
   { cuisine: "Mexican", orders: 540 },
 ];
 
-const sections = ["Users", "Restaurants", "Menu items", "Orders", "Payments", "Offers", "Reviews", "Analytics"];
+const sections = [
+  "Users",
+  "Restaurants",
+  "Menu items",
+  "Orders",
+  "Payments",
+  "Offers",
+  "Reviews",
+  "Analytics",
+];
 
 function Admin() {
   return (
@@ -58,7 +79,13 @@ function Admin() {
               <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
               <XAxis dataKey="day" stroke="var(--color-muted-foreground)" fontSize={12} />
               <Tooltip />
-              <Line type="monotone" dataKey="revenue" stroke="var(--color-coral)" strokeWidth={3} dot={false} />
+              <Line
+                type="monotone"
+                dataKey="revenue"
+                stroke="var(--color-coral)"
+                strokeWidth={3}
+                dot={false}
+              />
             </LineChart>
           </ResponsiveContainer>
         </Panel>
@@ -136,7 +163,9 @@ function Admin() {
 
 function Stat({ label, value, gradient }: { label: string; value: string; gradient: string }) {
   return (
-    <div className={`rounded-3xl p-5 text-primary-foreground shadow-[var(--shadow-soft)] ${gradient}`}>
+    <div
+      className={`rounded-3xl p-5 text-primary-foreground shadow-[var(--shadow-soft)] ${gradient}`}
+    >
       <p className="text-xs font-bold uppercase tracking-wider opacity-90">{label}</p>
       <p className="mt-1 font-display text-2xl font-extrabold">{value}</p>
     </div>
@@ -153,7 +182,9 @@ function Panel({
   className?: string;
 }) {
   return (
-    <section className={`rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] ${className}`}>
+    <section
+      className={`rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] ${className}`}
+    >
       <h2 className="font-display text-lg font-bold">{title}</h2>
       <div className="mt-4">{children}</div>
     </section>

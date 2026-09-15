@@ -14,7 +14,10 @@ export const Route = createFileRoute("/orders/$orderId")({
       { title: `Tracking order ${params.orderId} — Feasto` },
       { name: "description", content: "Follow your Feasto delivery from kitchen to doorstep." },
       { property: "og:title", content: "Live order tracking — Feasto" },
-      { property: "og:description", content: "Follow your Feasto delivery from kitchen to doorstep." },
+      {
+        property: "og:description",
+        content: "Follow your Feasto delivery from kitchen to doorstep.",
+      },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -37,7 +40,8 @@ function TrackOrder() {
   useEffect(() => {
     if (!order) return;
     const elapsed = Date.now() - order.placedAt;
-    const computed = elapsed > 20 * 60 * 1000 ? 3 : elapsed > 8 * 60 * 1000 ? 2 : elapsed > 60 * 1000 ? 1 : 0;
+    const computed =
+      elapsed > 20 * 60 * 1000 ? 3 : elapsed > 8 * 60 * 1000 ? 2 : elapsed > 60 * 1000 ? 1 : 0;
     setStage(computed);
     if (computed >= 3) return;
     const t = setInterval(() => setStage((s) => Math.min(3, s + 1)), 12000);
@@ -94,7 +98,13 @@ function TrackOrder() {
                       )}
                       aria-hidden
                     >
-                      {done ? <Check className="size-4" /> : i === 2 ? <Bike className="size-4" /> : i + 1}
+                      {done ? (
+                        <Check className="size-4" />
+                      ) : i === 2 ? (
+                        <Bike className="size-4" />
+                      ) : (
+                        i + 1
+                      )}
                     </span>
                     <span>
                       <span
@@ -153,7 +163,9 @@ function TrackOrder() {
             <p className="mt-3 text-sm text-muted-foreground">Paid via {order.payment}</p>
           </div>
           <div className="rounded-3xl border border-border bg-card p-5">
-            <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Items</p>
+            <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              Items
+            </p>
             <ul className="mt-2 space-y-1.5">
               {order.lines.map((l) => (
                 <li key={l.id} className="flex justify-between text-sm">
