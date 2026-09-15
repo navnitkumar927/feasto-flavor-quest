@@ -6,7 +6,7 @@ The design should feel as polished, colorful, modern, and engaging as leading fo
 
 This is not a basic landing page. Build a complete responsive web application with a beautiful customer experience and a proper 3-tier architecture.
 
-1. Technology Architecture
+1. Technology Architecture...
 
 Use:
 
